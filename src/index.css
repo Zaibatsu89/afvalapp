@@ -1,0 +1,69 @@
+:root { --bg:#fafafa; --fg:#1b1b1f; --mut:#6b6b76; --acc:#2e7d5b; --card:#fff; --line:#e3e3e8; --bad:#c0392b; font-family: system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+@media (prefers-color-scheme: dark) { :root { --bg:#121214; --fg:#ececf1; --mut:#9a9aa6; --card:#1c1c20; --line:#2c2c33; --acc:#4cc38a; } }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { padding-bottom: 76px; max-width: 560px; margin: 0 auto; }
+[hidden] { display: none !important; }
+.screen { padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; }
+h1 { margin: 0; font-size: 1.4rem; } h2 { margin: 10px 0 2px; font-size: 1rem; text-transform: capitalize; }
+small { color: var(--mut); }
+button, .btn, input { font: inherit; color: inherit; }
+button, .btn { min-height: 44px; padding: 8px 14px; border: 1px solid var(--line); background: var(--card); border-radius: 10px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; }
+button:disabled { opacity: .5; }
+button.primary { background: var(--acc); color: #fff; border-color: var(--acc); font-weight: 600; }
+button.danger { color: var(--bad); }
+.wide { width: 100%; }
+input { min-height: 44px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 10px; background: var(--card); width: 100%; }
+.row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.row > input { flex: 1; min-width: 80px; }
+.chips { display: flex; gap: 6px; overflow-x: auto; }
+.chip { min-height: 38px; border-radius: 19px; white-space: nowrap; text-transform: capitalize; }
+.chip.on { background: var(--acc); color: #fff; border-color: var(--acc); }
+.daynav { display: flex; justify-content: space-between; align-items: center; text-align: center; }
+.bars { display: grid; gap: 8px; }
+.barhead { display: flex; justify-content: space-between; font-size: .9rem; }
+.track { height: 10px; background: var(--line); border-radius: 5px; overflow: hidden; }
+.fill { height: 100%; background: var(--acc); } .fill.over, .over { background: var(--bad); color: var(--bad); } .fill.over { color: inherit; }
+.entry { border-bottom: 1px solid var(--line); }
+.entryhead { width: 100%; border: 0; background: none; justify-content: space-between; text-align: left; gap: 10px; }
+.entryedit { padding: 0 4px 10px; display: grid; gap: 8px; }
+.macros { color: var(--mut); font-size: .9rem; }
+.foods { list-style: none; margin: 0; padding: 0; }
+.foods li { display: flex; gap: 4px; border-bottom: 1px solid var(--line); align-items: stretch; }
+.foodmain { flex: 1; flex-direction: column; align-items: flex-start; border: 0; background: none; text-align: left; min-height: 56px; }
+.foodmain:active { background: var(--line); }
+.badge { margin-left: 8px; background: var(--acc); color: #fff; border-radius: 10px; padding: 1px 7px; font-size: .8rem; }
+.icon { min-width: 44px; padding: 0; border: 0; background: none; font-size: 1.1rem; }
+.empty { padding: 20px; color: var(--mut); }
+.modal { position: fixed; inset: 0; background: #0008; display: flex; align-items: flex-end; justify-content: center; z-index: 20; }
+.card { background: var(--bg); width: 100%; max-width: 560px; padding: 16px; border-radius: 18px 18px 0 0; display: grid; gap: 10px; }
+.card.tall { max-height: 92vh; overflow-y: auto; }
+.big { font-size: 2rem; text-align: center; min-height: 60px; }
+.field { display: grid; gap: 4px; } .field > span { font-size: .85rem; color: var(--mut); } .field.small { flex: 1; min-width: 60px; }
+.field.unread input { border-color: var(--bad); background: #c0392b18; }
+.warn { padding: 8px 10px; border-radius: 8px; background: #e6a70022; border: 1px solid #e6a700; font-size: .9rem; }
+.toast { position: fixed; left: 12px; right: 12px; bottom: 84px; max-width: 536px; margin: 0 auto; background: #222; color: #fff; padding: 8px 8px 8px 14px; border-radius: 12px; display: flex; justify-content: space-between; align-items: center; gap: 8px; z-index: 30; }
+.toast button { background: none; color: #8fe0b5; border: 0; font-weight: 600; }
+nav { position: fixed; bottom: 0; left: 0; right: 0; display: flex; background: var(--card); border-top: 1px solid var(--line); z-index: 10; }
+nav button { flex: 1; flex-direction: column; border: 0; border-radius: 0; background: none; font-size: .75rem; min-height: 64px; gap: 2px; }
+nav button.on { color: var(--acc); font-weight: 700; }
+.chart { width: 100%; color: var(--acc); }
+.weights { list-style: none; padding: 0; margin: 0; } .weights li { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid var(--line); }
+.profile { display: grid; gap: 6px; padding: 8px; border: 1px solid var(--line); border-radius: 12px; }
+
+.mealcard { border: 2px solid var(--line); border-radius: 14px; background: var(--card); padding: 4px 12px 6px; }
+.mealhead { display: flex; align-items: center; gap: 10px; padding: 6px 0; border-bottom: 2px solid var(--line); }
+.mealhead h2 { margin: 0; flex: 1; font-size: 1.15rem; text-transform: none; }
+.mealhead .kcal { color: var(--mut); font-variant-numeric: tabular-nums; }
+.mealhead .add { min-width: 44px; padding: 0; border-radius: 22px; background: var(--acc); color: #fff; border-color: var(--acc); font-size: 1.3rem; }
+.mealcard .entry:last-child { border-bottom: 0; }
+.waterbar { display: grid; grid-template-columns: auto 1fr auto; gap: 10px; align-items: center; padding: 4px 10px; border: 2px solid var(--line); border-radius: 14px; background: var(--card); }
+.waterbar button { min-height: 36px; padding: 2px 12px; border-radius: 18px; }
+.fill.water { background: #3b82c4; }
+.foods .sep { display: block; padding: 8px 4px 2px; font-size: .8rem; font-weight: 700; color: var(--mut); text-transform: uppercase; letter-spacing: .05em; border-bottom: 0; }
+.foods li.pinned { background: #2e7d5b14; }
+.back { align-self: flex-start; min-height: 44px; font-weight: 700; }
+.foods li.create { border-style: dashed; }
+.camera { position: fixed; inset: 0; z-index: 30; background: #000; display: flex; flex-direction: column; }
+.camera video { flex: 1; min-height: 0; width: 100%; object-fit: contain; }
+.camera .row { padding: 12px; justify-content: center; background: var(--bg); }
