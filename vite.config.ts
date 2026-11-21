@@ -22,5 +22,9 @@ export default defineConfig({
       workbox: { globPatterns: ['**/*.{js,css,html,svg}'] },
     }),
   ],
-  test: { environment: 'node' },
+  test: {
+    environment: 'jsdom',
+    setupFiles: './src/test-setup.ts',
+    globals: false,
+  },
 })
